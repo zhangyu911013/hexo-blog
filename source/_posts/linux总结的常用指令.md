@@ -73,6 +73,7 @@ thumbnail: /images/Pic_linux.png
    ```sudo service nginx restart``` --
    ```sudo /etc/init.d/nginx restart```  --- older ubuntu  重启nginx（启动start，停止stop，其他类似）
    ```sudo nginx -s reload``` mac重启nginx
+   ```sudo nginx -t``` 检查nginx config配置是否正确
 
 ### hexo
 1. ```hexo clean && hexo g && hexo d```  hexo博客编译及部署
@@ -98,12 +99,16 @@ thumbnail: /images/Pic_linux.png
 13. ```git config --global http.proxy socks5://127.0.0.1:{port}```  ```git config --global https.proxy socks5://127.0.0.1:{port} ``` git设置shadowsocks代理
 ```git config --global --unset http.proxy``` ```git config --global --unset https.proxy``` 重置设置
 14. ```git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d``` 删除已经合并到develop和master的分支
+15. ```git config core.ignorecase false``` windows,mac默认git不区分大小写，此项修改可以让git区分大小写
 
-### npm
+### npm | yarn
 1. ```npm config set registry https://registry.npm.taobao.org``` 设置淘宝npm镜像
+2. ```yarn unlink  => yarn install --check-files``` unlink所有npm包并重新安装依赖
+3. ```nvm npm_mirror https://npm.taobao.org/mirrors/npm/``` nvm安装npm设置代理
 
 ### mac
 1. ```ALL_PROXY=socks5://127.0.0.1:{port} brew upgrade``` homebrew走shadowsocks代理
+
 
 ### docker
 1. ```docker ps``` 查看活跃的docker镜像
